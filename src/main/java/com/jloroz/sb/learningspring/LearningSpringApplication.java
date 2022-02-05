@@ -1,6 +1,10 @@
 package com.jloroz.sb.learningspring;
 
+import com.jloroz.sb.learningspring.data.entity.Guest;
+import com.jloroz.sb.learningspring.data.entity.Reservation;
 import com.jloroz.sb.learningspring.data.entity.Room;
+import com.jloroz.sb.learningspring.data.repository.GuestRepository;
+import com.jloroz.sb.learningspring.data.repository.ReservationRepository;
 import com.jloroz.sb.learningspring.data.repository.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -24,9 +28,33 @@ public class LearningSpringApplication {
 		private RoomRepository roomRepository;
 
 		@GetMapping
-		public Iterable<Room> getRooms(){
+		public Iterable<Room> getRooms() {
 			return roomRepository.findAll();
-		}
 
+		}
 	}
+	@RestController
+	@RequestMapping("/guests")
+	public class GuestController{
+		@Autowired
+		private GuestRepository guestRepository;
+
+		@GetMapping
+		public Iterable<Guest> getGuests(){
+			return guestRepository.findAll();
+		}
+	}
+	
+	@RestController
+	@RequestMapping("/reservations")
+	public class ReservationController{
+		@Autowired
+		private ReservationRepository reservationRepository;
+
+		@GetMapping
+		public Iterable<Reservation> getGuests(){
+			return reservationRepository.findAll();
+		}
+	}
+
 }
