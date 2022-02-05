@@ -44,7 +44,7 @@ public class LearningSpringApplication {
 			return guestRepository.findAll();
 		}
 	}
-	
+
 	@RestController
 	@RequestMapping("/reservations")
 	public class ReservationController{

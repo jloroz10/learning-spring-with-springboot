@@ -1,7 +1,7 @@
 package com.jloroz.sb.learningspring.data.entity;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 @Table(name="RESERVATION")
@@ -19,7 +19,7 @@ public class Reservation {
     private long guestId;
 
     @Column(name="RES_DATE")
-    private Date resDate;
+    private Date reservationDate;
 
     public long getReservationId() {
         return reservationId;
@@ -46,10 +46,10 @@ public class Reservation {
     }
 
     public Date getResDate() {
-        return resDate;
+        return reservationDate;
     }
 
-    public void setResDate(Date resDate) {
-        this.resDate = resDate;
+    public void setResDate(Date reservationDate) {
+        this.reservationDate = reservationDate;
     }
 }
