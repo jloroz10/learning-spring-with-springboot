@@ -23,6 +23,7 @@ public class ReservationService {
     private ReservationRepository reservationRepository;
 
     public List<RoomReservation> getRoomReservationsForDate(Date date){
+        System.out.println(date.getTime());
         Iterable<Room> rooms = this.roomRepository.findAll();
         Map<Long,RoomReservation> roomReservationMap = new HashMap();
 
